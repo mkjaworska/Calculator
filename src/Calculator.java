@@ -12,6 +12,7 @@ public class Calculator implements ActionListener {
     JButton delButton, eqButton, decButton, clrButton, negButton;
 
     JPanel panel;
+    JPanel mainPanel;
 
     Font myFont = new Font("Serif", Font.BOLD, 30);
 
@@ -25,11 +26,18 @@ public class Calculator implements ActionListener {
         frame.setSize(420, 550);
         frame.setLayout(null);
 
+        mainPanel = new JPanel();
+        mainPanel.setSize(420, 550);
+        mainPanel.setLayout(null);
+        mainPanel.setBackground(new Color(255, 229, 236));
+        //(new Color(255, 179, 198));
+
 
         textField = new JTextField();
         textField.setBounds(50, 25, 300, 50);
         textField.setFont(myFont);
         textField.setEditable(false);
+        textField.setBackground(new Color(255, 179, 198));
 
         addButton = new JButton("+");
         subButton = new JButton("-");
@@ -40,6 +48,8 @@ public class Calculator implements ActionListener {
         delButton = new JButton("delete");
         clrButton = new JButton("clear");
         negButton = new JButton("(-)");
+
+
 
         functionButtons[0] = addButton;
         functionButtons[1] = subButton;
@@ -71,7 +81,7 @@ public class Calculator implements ActionListener {
         panel = new JPanel();
         panel.setBounds(50, 100, 300 , 300);
         panel.setLayout(new GridLayout(4, 4, 10, 10));
-        //panel.setBackground(Color.GRAY);
+        panel.setBackground(new Color(255, 229, 236));
 
         panel.add(numberButtons[1]);
         panel.add(numberButtons[2]);
@@ -91,11 +101,12 @@ public class Calculator implements ActionListener {
         panel.add(divButton);
 
 
-        frame.add(panel);
-        frame.add(negButton);
-        frame.add(delButton);
-        frame.add(clrButton);
-        frame.add(textField);
+        frame.add(mainPanel);
+        mainPanel.add(panel);
+        mainPanel.add(negButton);
+        mainPanel.add(delButton);
+        mainPanel.add(clrButton);
+        mainPanel.add(textField);
         frame.setVisible(true);
 
     }
