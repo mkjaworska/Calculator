@@ -30,7 +30,7 @@ public class Calculator implements ActionListener {
         mainPanel.setSize(420, 550);
         mainPanel.setLayout(null);
         mainPanel.setBackground(new Color(255, 229, 236));
-        //(new Color(255, 179, 198));
+
 
 
         textField = new JTextField();
@@ -61,6 +61,7 @@ public class Calculator implements ActionListener {
         functionButtons[7] = clrButton;
         functionButtons[8] = negButton;
 
+
         for(int i = 0; i < 9; i++) {
             functionButtons[i].addActionListener(this);
             functionButtons[i].setFont(myFont);
@@ -74,6 +75,11 @@ public class Calculator implements ActionListener {
             numberButtons[i].setFocusable(false);
         }
 
+        for(int i = 0; i < 10; i++) {
+            numberButtons[i].setBackground(new Color(255, 179, 198));
+            numberButtons[i].setOpaque(true);
+        }
+
         negButton.setBounds(50,430,100,50);
         delButton.setBounds(150,430, 100, 50);
         clrButton.setBounds(250,430, 100, 50);
@@ -82,6 +88,7 @@ public class Calculator implements ActionListener {
         panel.setBounds(50, 100, 300 , 300);
         panel.setLayout(new GridLayout(4, 4, 10, 10));
         panel.setBackground(new Color(255, 229, 236));
+
 
         panel.add(numberButtons[1]);
         panel.add(numberButtons[2]);
